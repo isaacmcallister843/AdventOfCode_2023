@@ -4,6 +4,9 @@
 #include <iostream> 
 #include <fstream>
 #include <string>
-#include <set>
+#include <cctype>
+#include <map>
+#include<list>
+#include<vector> 
 
 #endif
