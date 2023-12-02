@@ -70,7 +70,6 @@ int main(){
                     };
                 }; 
             };
-        
 
             if(foundNumber_RHS){
                 break; 
