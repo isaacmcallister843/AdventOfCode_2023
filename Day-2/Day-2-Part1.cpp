@@ -3,8 +3,6 @@
 int main(){
     std::string line;
     std::ifstream input("Day-2-Input.txt");
-
-
     std::map<std::string, int> maxValues = {{"red", 12}, {"green", 13}, {"blue", 14}}; 
     int sum = 0; 
 
@@ -24,13 +22,11 @@ int main(){
         // Get rid of the ; dont need them 
         std::replace(iterateString.begin(), iterateString.end(), ';', ',');
 
-
         // Now need to iterate through the string and find min and max values 
         std::stringstream strStream(iterateString);
         std::string tmp; 
 
         while(std::getline(strStream, tmp, ',')){
-            
             std::stringstream dataStream(tmp);
             int number; 
             std::string color; 
@@ -40,15 +36,11 @@ int main(){
                 addID = false; 
                 break;
             }
-        
         }
 
         if(addID){
             sum+=numberGame; 
         }
-    
-
     };
     std::cout<<sum<<std::endl; 
-
 };
