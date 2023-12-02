@@ -20,14 +20,11 @@ int main(){
         std::vector<std::string> lhsList;
 
         for (int i = 0; i < line.length() ; ++i){
-
             c_1 = line[i]; 
-
             if(isdigit(c_1)){
                 finalString += std::string(1, c_1); 
                 break; 
             }; 
-
             if(lhsList.size() != 0){ 
                 for (int i = 0; i < lhsList.size(); ++i ){
                     lhsList[i] = lhsList[i] + std::string(1, c_1); 
@@ -35,7 +32,6 @@ int main(){
                         foundNumber_LHS = true; 
                         finalString += numberMap[lhsList[i]];
                         break;
-
                     };
                 }; 
             };
@@ -53,8 +49,6 @@ int main(){
 
         for (int i = line.length() - 1; i >= 0; --i){
             c_2 = line[i]; 
-            
-
             if(isdigit(c_2)){
                 finalString += std::string(1, c_2); 
                 break; 
@@ -76,10 +70,8 @@ int main(){
             };
 
             rhsList.push_back(std::string(1, c_2));
-
         }; 
         sum += std::stoi(finalString); 
     }; 
-
     std::cout<<sum<<std::endl; 
 };

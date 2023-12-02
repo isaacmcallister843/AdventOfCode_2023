@@ -5,8 +5,7 @@ int main(){
     std::ifstream input("Day-2-Input.txt");
 
     int sum = 0; 
-
-
+    
     while(std::getline(input, line)){
         std::map<std::string, int> maxValues = {{"red", 0}, {"green", 0}, {"blue", 0}}; 
 
@@ -20,7 +19,6 @@ int main(){
 
         // Get rid of the ; dont need them 
         std::replace(iterateString.begin(), iterateString.end(), ';', ',');
-
 
         // Now need to iterate through the string and find min and max values 
         std::stringstream strStream(iterateString);
@@ -40,13 +38,14 @@ int main(){
 
         int power = 1; 
 
+        // int product = std::accumulate(maxValues.begin(), maxValues.end(), 1,
+        //    [](int acc, const std::pair<std::string, int>& p) { return acc * p.second; });
+
         for (auto val : maxValues) { 
             power *= val.second; 
         }
         sum += power; 
-
     };
 
     std::cout<< sum<< std::endl; 
-
 };
