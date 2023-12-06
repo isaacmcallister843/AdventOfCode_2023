@@ -120,8 +120,6 @@ int main(){
                             std::cout << std::get<0>(t) <<  " : " << std::get<1>(t)<<  " : "  << std::get<2>(t) << std::endl; 
                         }
                     }
-
-
                 }// Seed proccesing loop
 
 

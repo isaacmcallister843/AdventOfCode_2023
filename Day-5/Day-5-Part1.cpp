@@ -14,7 +14,6 @@ int main(){
     long long rangeValues; 
     while(sl >> startValues){
         ///std::cout << startValues << " : " << rangeValues <<  std::endl;
-
         valuesToLookup.push_back(startValues); 
     }
 

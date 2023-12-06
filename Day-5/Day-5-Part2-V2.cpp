@@ -7,7 +7,6 @@ int main(){
 
     // This vector will hold the min and max values, and the change that occurs 
     std::vector<std::tuple<long long, long long>> seedRanges;
-    
 
     // New structure stores min value, max value, for input and change to be added
     std::vector<std::pair<std::string,std::vector< std::tuple<long long, long long, long long>>>> allMaps;
@@ -89,11 +88,9 @@ int main(){
             tempLocation += valForwardAdjustment;
             // std::cout << "Final Temp: " << tempLocation << std::endl; 
             // std::cout << "-----" << std::endl; 
-            
         }
 
         bool done = false; 
-
         for(auto t : seedRanges){
             
             long long minVal = std::get<0>(t); 
@@ -105,13 +102,11 @@ int main(){
                 std::cout << tempLocation << std::endl; 
                 done= true; 
                 break;
-
             }
         }
         if (done){
             break; 
         }
-
         startLocation++; 
     }
 } 
