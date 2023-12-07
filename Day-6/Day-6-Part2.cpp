@@ -15,9 +15,6 @@ int main(){
         }
         puzzleData.push_back(std::stoll(inTake));
     }
-    std::cout << puzzleData[0] << std::endl ;
-    std::cout << puzzleData[1] << std::endl ;
-
 
     int outValue = 1; 
     long long time = puzzleData[0]; 
@@ -27,11 +24,9 @@ int main(){
     for(int pushTime = 0; pushTime <= time; pushTime++){ 
         long long runTime = time - pushTime; 
         long long simDistance = pushTime * runTime ;
-
         if(simDistance > distance){ 
             numVictories++; 
         }
-    
     }
 
     std::cout << numVictories << std::endl; 
