@@ -13,7 +13,6 @@ int translation(std::string hand) {
         }
     }
     std::map<char, int> seenValues;
-    int numJ = 0; 
 
     for(char c : hexString){
         if (seenValues.find(c) == seenValues.end()){
@@ -22,12 +21,10 @@ int translation(std::string hand) {
         else{
             seenValues[c]++; 
         }
-        if (c == '1'){
-            numJ ++; 
-        }
     }
-
+    int numJ = seenValues['1']; 
     seenValues['1'] = 0; 
+
     std::vector<std::pair<char, int>> vec(seenValues.begin(), seenValues.end());
     std::sort(vec.begin(), vec.end(), [](const auto& a, const auto& b) {
         return a.second > b.second;
@@ -74,5 +71,4 @@ int main(){
         totalValue += (i+1) * hands_bets[i].second; 
     }
     std::cout <<totalValue << std::endl;
-
 }
