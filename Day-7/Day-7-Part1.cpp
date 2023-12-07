@@ -12,53 +12,41 @@ int translation(std::string hand) {
         }
     }
     
-    // Populate a map with how many times we see eeach character 
     std::map<char, int> seenValues;
 
     for(char c : hexString){
         if (seenValues.find(c) == seenValues.end()){
-            // Havent seen that character before 
             seenValues[c] = 1;
         }
         else{
             seenValues[c]++; 
         }
     }
-    // Code gotten from stackoverflow 
-    std::vector<std::pair<char, int>> vec(seenValues.begin(), seenValues.end());
 
-    // Sort the vector by the second element of the pair
+    std::vector<std::pair<char, int>> vec(seenValues.begin(), seenValues.end());
     std::sort(vec.begin(), vec.end(), [](const auto& a, const auto& b) {
         return a.second > b.second;
     });
 
-    // Check conditions 
     if(vec[0].second == 5) { 
-        // std::cout<<"        Five of a kind" << std::endl; 
         hexString = "6" + hexString;  
     } 
     else if(vec[0].second == 4){ 
-        // std::cout<<"        4 of a kind" << std::endl; 
         hexString = "5" + hexString;
     }
     else if(vec[0].second == 3 && vec[1].second == 2){
-        // std::cout<<"        Full house" << std::endl; 
         hexString = "4" + hexString;
     }
     else if(vec[0].second == 3 && vec[1].second == 1){
-        // std::cout<<"        3 of a kind" << std::endl; 
         hexString = "3" + hexString;  
     }
     else if(vec[0].second == 2 && vec[1].second == 2){
-        // std::cout<<"        2 pair" << std::endl; 
         hexString = "2" + hexString;
     }
     else if(vec[0].second == 2){ 
-        // std::cout<<"        1 pair" << std::endl; 
         hexString = "1" + hexString;
     }
-    int num = std::stoi(hexString, nullptr, 16);
-    return num;  
+    return std::stoi(hexString, nullptr, 16);
 }
 
 int main(){
@@ -76,7 +64,6 @@ int main(){
     }
     std::sort(hands_bets.begin(), hands_bets.end()); 
     
-    std::cout << "--------" << std::endl; 
     int totalValue = 0; 
     for(int i = 0; i < hands_bets.size(); i++){ 
         std::cout << hands_bets[i].first << " : " << hands_bets[i].second << std::endl; 
