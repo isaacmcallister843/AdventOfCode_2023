@@ -66,7 +66,6 @@ int main(){
     
     int totalValue = 0; 
     for(int i = 0; i < hands_bets.size(); i++){ 
-        std::cout << hands_bets[i].first << " : " << hands_bets[i].second << std::endl; 
         totalValue += (i+1) * hands_bets[i].second; 
     }
     std::cout <<totalValue << std::endl;
