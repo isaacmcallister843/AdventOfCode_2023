@@ -69,5 +69,4 @@ int main(){
         totalValue += (i+1) * hands_bets[i].second; 
     }
     std::cout <<totalValue << std::endl;
-
 }
