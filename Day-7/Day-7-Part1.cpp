@@ -11,7 +11,6 @@ int translation(std::string hand) {
             hexString += c; 
         }
     }
-    
     std::map<char, int> seenValues;
 
     for(char c : hexString){

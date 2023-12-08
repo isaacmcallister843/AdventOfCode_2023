@@ -50,6 +50,7 @@
         "map": "cpp",
         "vector": "cpp",
         "algorithm": "cpp",
-        "sstream": "cpp"
+        "sstream": "cpp",
+        "numeric": "cpp"
     }
 }
