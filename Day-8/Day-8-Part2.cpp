@@ -77,9 +77,5 @@ int main(){
         }
     }
 
-    for (int m = 0; m < inputPaths.size(); m ++){
-        std::cout << inputPaths[m].first << " : " << inputPaths[m].second << std::endl; 
-    }
-
     std::cout <<findLCM(inputPaths) <<std::endl;   
 }
