@@ -6,7 +6,6 @@ int main(){
     int sum = 0; 
     
     while(std::getline(input, line)){
-
         std::vector<std::vector<int>> newVec; 
         std::vector<int> firstline;
         std::stringstream ss(line); 
@@ -17,15 +16,14 @@ int main(){
 
         std::reverse(firstline.begin(), firstline.end());
         firstline.push_back(INT16_MAX);
-
         newVec.push_back(firstline); 
 
         // FIlling it with the max value, this value indicates that we havent filled the vector
         firstline = std::vector<int>(firstline.size(), INT16_MAX);
-        
         int currentRow = 0; 
         bool exit = false; 
         int i; 
+
         while(!exit){ 
             i = 1; 
             exit = true; 
@@ -39,14 +37,12 @@ int main(){
             }
             newVec.push_back(firstline);
             firstline = std::vector<int>(firstline.size(), INT16_MAX); 
-            currentRow ++;             
-            
+            currentRow++;             
         }
         
         currentRow = newVec.size()-1; 
         newVec[currentRow][i-1] = 0;
         currentRow--;
-
         int predictedValue;
 
         while(currentRow >= 0){ 
@@ -60,6 +56,5 @@ int main(){
         }
         sum += predictedValue;
     }
-    
     std::cout<< sum << std::endl;
 }

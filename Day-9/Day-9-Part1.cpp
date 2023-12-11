@@ -1,5 +1,6 @@
 #include "Day-9-Isaac.hpp"
 
+// Way better solution : https://github.com/lmitlaender/Advent_of_Code_2023/blob/main/Cpp_Advent_of_code_23/2023/day9.cpp 
 
 int main(){
     std::string line;
@@ -19,7 +20,6 @@ int main(){
             iter++;    
         }
         newVec.push_back(firstline); 
-        // FIlling it with the max value, this value indicates that we havent filled the vector
         firstline = std::vector<int>(firstline.size(), INT16_MAX); 
 
         int currentRow = 0; 
@@ -55,23 +55,8 @@ int main(){
             newVec[currentRow][value]= predictedValue;
             currentRow--; 
         }
-
         sum += predictedValue;
 
-        // int r_ = 0;
-
-        // for(auto r : newVec){ 
-        //     std::cout << r_ << " : ";
-        //     for (auto b : r){ 
-        //         if(b!=INT16_MAX){ 
-        //             std::cout << b << ",";
-        //         }
-        //     }
-        //     std::cout << std::endl; 
-        //     r_++;
-        // }
     }
-
     std::cout<< sum << std::endl;
-
 }
